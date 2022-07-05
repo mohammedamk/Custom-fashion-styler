@@ -1,0 +1,124 @@
+@use "sass:math";
+
+.moda-match-header {
+
+  padding: 18px 24px;
+
+  &-wrapper {
+
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    flex-wrap: nowrap;
+
+  }
+
+  &-toggle {
+
+    display: inline-block;
+
+    vertical-align: middle;
+
+    margin-right: 25px;
+
+    width: 23px;
+    height: 23px;
+
+    svg {
+
+      width: 23px;
+      height: 23px;
+
+      .moda-match-icon--fill {
+
+        fill: #000000;
+
+      }
+
+      .moda-match-icon--stroke {
+
+        stroke: #000000;
+
+      }
+
+    }
+
+  }
+
+  &-title {
+
+    margin: 0;
+    padding: 0;
+
+    font-size: math.div(27, 16) * 1em;
+    font-weight: 700;
+
+    line-height: math.div(40, 27) * 1em;
+    letter-spacing: math.div(2.86, 27) * 1em;
+
+    margin-right: 37px;
+
+    @media( max-width: 400px ) {
+
+      font-size: math.div( 24, 16 ) * 1em;
+
+    }
+
+    @media( max-width: 370px ) {
+
+      font-size: math.div( 21, 16 ) * 1em;
+
+    }
+
+    @media( max-width: 340px ) {
+
+      font-size: math.div( 18, 16 ) * 1em;
+
+    }
+
+  }
+
+  &-logo {
+
+    position: relative;
+
+    flex-grow: 1;
+
+    text-align: right;
+
+    img, svg {
+
+      position: relative;
+
+      width: 43px;
+
+      z-index: 30;
+
+    }
+
+    &:before {
+
+      content: '';
+
+      display: block;
+
+      position: absolute;
+
+      left: 0;
+      top: 50%;
+      right: 55px;
+
+      transform: translateY( -50% );
+
+      height: 2px;
+      background-color: #000000;
+
+      z-index: 20;
+
+    }
+
+  }
+
+}

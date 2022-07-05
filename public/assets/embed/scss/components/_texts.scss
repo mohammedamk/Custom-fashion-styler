@@ -1,0 +1,15 @@
+@use "sass:math";
+
+.moda-match-text {
+
+  &--type-1 {
+
+    font-size: math.div( 11, 16 ) * 1em;
+    font-weight: 500;
+
+    line-height: math.div( 17, 11 ) * 1em;
+    letter-spacing: math.div( 0.55, 11 ) * 1em;
+
+  }
+
+}

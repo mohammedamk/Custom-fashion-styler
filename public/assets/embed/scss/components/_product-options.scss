@@ -1,0 +1,278 @@
+@use "sass:math";
+
+.moda-match-product-options {
+
+  display: flex;
+  flex-direction: column;
+
+  @media( max-width: 400px ) {
+    flex-direction: column-reverse;
+  }
+
+  &-header {
+
+    margin-bottom: 9px;
+
+  }
+
+  &-title {
+
+    font-size: math.div(22, 16) * 1em;
+    font-weight: 700;
+
+    @media( max-width: 400px ) {
+
+      font-size: math.div( 19, 16 ) * 1em;
+
+    }
+
+    @media( max-width: 350px ) {
+
+      font-size: math.div( 16, 16 ) * 1em;
+
+    }
+
+    line-height: math.div(33, 22) * 1em;
+    letter-spacing: math.div(1.1, 22) * 1em;
+
+    color: map-get( $colors, 'black' );
+
+  }
+
+  &-view {
+
+    display: inline-block;
+
+    line-height: normal;
+
+    font-size: math.div( 16, 22 ) * 1em;
+    font-weight: 600;
+
+    text-decoration: underline;
+
+    color: map_get( $colors, 'black' );
+    opacity: 0.5;
+
+    transition: color 0.225s ease-out;
+
+    margin-top: 4px;
+
+    &:hover, &:focus {
+
+      text-decoration: underline;
+
+      color: darken( map-get( $colors, 'black' ), 7% );
+      opacity: 1;
+
+      outline: none;
+
+    }
+
+  }
+
+  &-cart {
+
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    flex-wrap: nowrap;
+
+    &-left {
+
+      margin-right: 26px;
+
+      @media( max-width: 360px ) {
+
+        margin-right: 16px;
+
+      }
+
+      header {
+
+        font-size: math.div(11, 16) * 1em;
+        font-weight: 500;
+
+        line-height: math.div(17, 11) * 1em;
+        letter-spacing: math.div(0.55, 11) * 1em;
+
+        color: #e8e8e8;
+
+      }
+
+      span {
+
+        font-size: math.div( 22, 16 ) * 1em;
+        font-weight: 600;
+
+        @media( max-width: 360px ) {
+
+          font-size: math.div( 18, 16 ) * 1em;
+
+        }
+
+        line-height: math.div( 33, 22 ) * 1em;
+        letter-spacing: math.div( 1.1, 22 ) * 1em;
+
+        color: #000000;
+
+        text-transform: uppercase;
+
+      }
+
+    }
+
+    &-right {
+
+      text-align: right;
+
+      flex-grow: 1;
+
+      .moda-match-btn {
+
+        display: block;
+
+        text-align: center;
+
+        + .moda-match-btn {
+
+          margin-top: 10px;
+
+        }
+
+        font-size: math.div( 14, 16 ) * 1em;
+        font-weight: 700;
+
+        line-height: math.div( 16, 14 ) * 1em;
+        letter-spacing: math.div( 1.25, 14 ) * 1em;
+
+        color: map_get( $colors, 'white' );
+
+        padding: 10px 20px;
+
+        &--size-small {
+
+          font-size: math.div( 11, 16 ) * 1em;
+
+          padding: 10px 16px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  &-choices {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    margin-right: -21px;
+    margin-bottom: -21px;
+
+    &-button-container{
+      flex: 0 0 auto;
+      padding-top: 20px;
+
+      &.moda-match-product-options-cart-right .moda-match-btn--size-small{
+        padding: 14px;
+      }
+    }
+
+    &-list{
+      flex: 1 1 auto;
+
+      &-and-button{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        align-items: start;
+
+        @media( max-width: 400px ) {
+          margin-bottom: 10px;
+        }
+      }
+
+    }
+
+  }
+
+  &-choice {
+
+    input {
+
+      display: none;
+
+      + label {
+
+        display: inline-block;
+
+        margin-right: 21px;
+        margin-bottom: 21px;
+
+        background-color: #e8e8e8;
+
+        font-size: math.div( 14, 16 ) * 1em;
+        font-weight: 500;
+
+        @media ( max-width: 360px ) {
+
+          font-size: math.div( 13, 16 ) * 1em;
+
+        }
+
+        line-height: math.div( 21, 14 ) * 1em;
+        letter-spacing: math.div( 0.7, 14 ) * 1em;
+
+        color: map-get( $colors, 'black' );
+
+        padding: 10px 20px;
+
+        border-radius: 10px;
+
+        transition: background-color 0.225s ease-out;
+
+      }
+
+      &:checked {
+
+        + label {
+
+          background-color: map-get( $colors, 'black' );
+          color: map-get( $colors, 'white' );
+
+        }
+
+      }
+
+      &:disabled {
+
+        + label {
+
+          background-color: #e8e8e8;
+
+          opacity: 0.48;
+
+          cursor: not-allowed;
+
+        }
+
+      }
+
+    }
+
+
+
+  }
+
+}

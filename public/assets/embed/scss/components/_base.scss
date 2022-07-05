@@ -1,0 +1,155 @@
+@use "sass:math";
+
+*, *:before, *:after {
+
+  box-sizing: border-box;
+
+}
+
+
+#moda-match-app {
+
+  // font-family: 'Poppins', sans-serif;
+  // font-family: 'Graphik', sans-serif;
+  font-size: 16px;
+
+  line-height: normal;
+
+  display: flex;
+
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  justify-content: flex-start;
+  align-items: stretch;
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  padding-bottom: 71px;
+
+  overflow: hidden;
+
+}
+
+.moda-match-app-inner {
+
+  min-height: 300px;
+
+  flex-grow: 1;
+
+  position: relative;
+
+  > *:last-child {
+
+    padding-bottom: 40px;
+
+  }
+
+  overflow: hidden;
+
+}
+
+.moda-match-scroll {
+
+  height: 100%;
+
+  overflow-y: scroll;
+
+}
+
+.moda-match-app-content {
+
+  padding: 40px 15px 40px 15px;
+
+  overflow: hidden;
+
+}
+
+.moda-match-contained {
+
+  padding: 0 15px;
+
+  overflow: hidden;
+
+}
+
+.moda-match-full-height {
+
+  height: 100%;
+
+  overflow-y: scroll;
+
+}
+
+.moda-match-vertical-align {
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  > * {
+
+    margin: auto;
+
+  }
+
+}
+
+.moda-match-preloaded {
+
+  display: none;
+
+}
+
+.moda-match-app--no-scroll {
+
+  overflow: hidden;
+
+  .moda-match-full-height {
+
+    overflow: hidden;
+
+  }
+
+}
+
+.moda-match-powered-by {
+
+  margin-top: 40px;
+
+  text-align: center;
+
+  font-size: math.div( 12, 16 ) * 1em;
+  color: #000000;
+
+  opacity: 0.5;
+
+  a {
+
+    color: map-get( $colors, 'black' );
+
+    text-decoration: underline;
+
+    &:hover, &:focus {
+
+      color: map-get( $colors, 'black' );
+
+      text-decoration: underline;
+
+    }
+
+  }
+
+}

@@ -1,0 +1,30 @@
+.moda-match-items-grid {
+
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: stretch;
+
+  flex-wrap: wrap;
+
+  margin-right: -17px;
+  margin-bottom: -17px;
+
+  &-item {
+
+    flex: 0 1;
+
+    min-width: calc( ( 100% - 34px ) / 2 );
+
+    margin-right: 17px;
+    margin-bottom: 17px;
+
+    .moda-match-item-card {
+
+      min-height: 100%;
+
+    }
+
+  }
+
+}

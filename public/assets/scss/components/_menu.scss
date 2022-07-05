@@ -1,0 +1,117 @@
+@use "sass:math";
+
+#dashboard {
+
+  .dashboard__menu {
+
+    margin-top: 2px;
+
+    a {
+
+      display: block;
+
+      padding: 18px 18px 18px 25px;
+
+      font-size: math.div(15, 16) * 1rem;
+      font-weight: 400;
+
+      color: map-get( $colors, 'white' );
+
+      text-decoration: none;
+
+      border-left: solid 5px map-get( $colors, 'dark' );
+
+      transition: color 0.225s ease-in-out;
+
+      svg, img {
+
+        display: inline-block;
+
+        vertical-align: middle;
+
+        width: 16px;
+        height: auto !important;
+
+        margin-right: 11px;
+
+      }
+
+      .icon--fill {
+
+        fill: map-get( $colors, 'icons' );
+
+      }
+
+      .icon--stroke {
+
+        stroke: map-get( $colors, 'icons' )
+
+      }
+
+      &:hover, &:focus {
+
+        color: darken( map-get( $colors, 'white' ), 7% );
+
+        text-decoration: none;
+
+        outline: none;
+
+        .icon--fill {
+
+          fill: darken( map-get( $colors, 'icons' ), 7% );
+
+        }
+
+        .icon--stroke {
+
+          stroke: darken( map-get( $colors, 'icons' ), 7% );
+
+        }
+
+      }
+
+      &.dashboard__menu--is-active {
+
+        color: map-get( $colors, 'white' );
+
+        background-color: rgba(0, 0, 0, 0.1);
+
+        border-left-color: map-get( $colors, 'brand' );
+
+        .icon--fill {
+
+          fill: map-get( $colors, 'brand' );
+
+        }
+
+        .icon--stroke {
+
+          stroke: map-get( $colors, 'brand' );
+
+        }
+
+        &:hover, &:focus {
+
+          color: map-get( $colors, 'white' );
+
+          .icon--fill {
+
+            fill: map-get( $colors, 'brand' );
+
+          }
+
+          .icon--stroke {
+
+            stroke: map-get( $colors, 'brand' );
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

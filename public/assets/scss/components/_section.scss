@@ -1,0 +1,61 @@
+@use "sass:math";
+
+.page__section {
+
+  .section__header {
+
+    margin-bottom: 31px;
+
+    overflow: hidden;
+
+    &Wrapper {
+
+      display: flex;
+
+      justify-content: flex-start;
+      align-items: center;
+
+      margin-right: -30px;
+      margin-bottom: -30px;
+
+    }
+
+    &Left, &Right {
+
+      flex: 1 1;
+
+      margin-right: 30px;
+      margin-bottom: 30px;
+
+    }
+
+    &Right {
+
+      text-align: right;
+
+    }
+
+  }
+
+  .section__title {
+
+    margin: 0;
+    padding: 0;
+
+    font-size: math.div(28, 16) * 1rem;
+    font-weight: 400;
+
+    line-height: math.div(40, 28) * 1em;
+    letter-spacing: 0;
+
+    color: map-get( $colors, 'dark' );
+
+  }
+
+  .section__content {
+
+    overflow: hidden;
+
+  }
+
+}

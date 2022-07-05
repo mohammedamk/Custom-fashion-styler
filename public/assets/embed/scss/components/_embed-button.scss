@@ -1,0 +1,44 @@
+@use "sass:math";
+
+.moda-match-button {
+
+  position: relative;
+
+  margin: 0;
+  padding: 13px 22px;
+
+  display: inline-block;
+
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  background: none;
+  outline: none;
+  text-decoration: none;
+
+  font: inherit;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: math.div(27, 14) * 1em;
+  letter-spacing: math.div(1, 14) * 1em;
+
+  background-color: map-get($colors, 'secondary');
+  color: map-get($colors, 'white');
+
+  border-radius: 5px;
+
+  transition: background-color 0.225s ease-out;
+
+  &:hover, &:focus {
+
+    background-color: darken( map_get( $colors, 'secondary' ), 7% );
+
+    text-decoration: none;
+
+    color: map-get( $colors, 'white' );
+
+  }
+
+}

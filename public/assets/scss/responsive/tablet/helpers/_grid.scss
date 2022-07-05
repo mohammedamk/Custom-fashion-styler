@@ -1,0 +1,47 @@
+.grid {
+
+  @for $i from 2 through 5 {
+
+    $columns_count: max(1, $i - 1);
+
+    $margins: $columns_count * 10.5px;
+
+    &--#{$i} {
+
+      .grid__item {
+
+        min-width: calc((100% - #{$margins}) / #{$columns_count});
+
+      }
+
+    }
+
+  }
+
+  @for $s from 1 through 20 {
+
+    &--spacing-#{$s * 5} {
+
+      @for $i from 2 through 5 {
+
+        $columns_count: max(1, $i - 1);
+
+        $margins: $columns_count * ( $s * 5px );
+
+        &.grid--#{$i} {
+
+          .grid__item {
+
+            min-width: calc((100% - #{$margins}) / #{$columns_count});
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

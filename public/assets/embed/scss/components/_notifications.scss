@@ -1,0 +1,126 @@
+@use 'sass:math';
+
+.vue-notification-group {
+
+  position: absolute;
+
+  top: -5px !important;
+  left: 0 !important;
+  right: 0 !important;
+
+  width: auto !important;
+
+  padding: 20px;
+
+  z-index: 9999;
+
+  overflow: visible;
+
+}
+
+.vue-notification-wrapper {
+
+  display: block;
+
+  width: 345px;
+  max-width: 100%;
+
+  padding: 3px;
+
+  margin: 0 auto;
+
+  overflow: visible;
+
+  margin-top: 5px;
+
+}
+
+.vue-notification {
+
+  position: relative;
+
+  display: block;
+
+  text-align: center;
+
+  margin: 0 auto;
+
+  padding: 14px 16px;
+
+  border-radius: 4px;
+
+  background-color: map-get($colors, 'black');
+
+  font-size: math.div( 14, 16 ) * 1em;
+  font-weight: 400;
+
+  @media ( max-width: 360px ) {
+
+    font-size: math.div( 12, 16 ) * 1em;
+
+    padding: 10px 12px;
+
+  }
+
+  line-height: math.div( 20, 14 ) * 1em;
+  letter-spacing: math.div( 0.25, 14 ) * 1em;
+
+  color: map-get($colors, 'white');
+
+  box-shadow: 0 0 2px rgba( 0, 0, 0, 0.2 );
+
+  &:before {
+
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    display: block;
+
+    width: 18px;
+    height: 18px;
+
+    border: solid 2px #ffffff;
+
+    box-shadow: 0 0 20px rgba( 0, 0, 0, 0.2 );
+
+    border-radius: 100%;
+
+    transform: translate( -50%, -50% );
+
+  }
+
+  &.info {
+
+    &:before {
+
+      background-color: #32abdb;
+
+    }
+
+  }
+
+  &.error {
+
+    &:before {
+
+      background-color: #db324d;
+
+    }
+
+  }
+
+  &.success {
+
+    &:before {
+
+      background-color: #32db81;
+
+    }
+
+  }
+
+}

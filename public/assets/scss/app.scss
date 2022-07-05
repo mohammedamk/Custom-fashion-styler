@@ -1,0 +1,50 @@
+//Importing settings
+@import "settings";
+
+//Resetting
+@import "reset";
+
+$primary: map-get( $colors, 'dark' );
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+//Importing components
+@import "components/base";
+@import "components/dashboard";
+@import "components/sidebar";
+@import "components/page";
+@import "components/menu";
+@import "components/header";
+@import "components/section";
+@import "components/widgets";
+@import "components/table";
+@import "components/empty-text";
+@import "components/form";
+@import "components/buttons";
+@import "components/alert";
+@import "components/loader";
+@import "components/tooltip";
+@import "components/checkbox";
+@import "components/notifications";
+@import "components/portal";
+@import "components/heading";
+@import "components/text";
+@import "../node_modules/bootstrap/scss/pagination";
+@import "components/circle";
+@import "components/tabs-toggle";
+
+//Importing layouts
+@import "layouts/portal";
+
+//Importing helpers
+@import "helpers/spacing";
+@import "helpers/boxed";
+@import "helpers/alignments";
+@import "helpers/grid";
+@import "helpers/max-width";
+@import "helpers/text-color";
+
+//Importing responsive
+@import 'responsive/responsive';

@@ -1,0 +1,46 @@
+//Importing settings
+@import "settings";
+
+//Importing fonts
+@import "fonts";
+
+#moda-match-embed {
+
+  //Resetting
+  @import "components/reset";
+
+  //Importing components
+  @import "components/base";
+  @import "components/transitions";
+  @import "components/header";
+  @import "components/footer";
+  @import "components/tabs";
+  @import "components/items-grid";
+  @import "components/item-card";
+  @import "components/split-view";
+  @import "components/vertical-items";
+  @import "components/model-viewer";
+  @import "components/buttons";
+  @import "components/modal";
+  @import "components/product-options";
+  @import "components/loader";
+  @import "components/cart";
+  @import "components/texts";
+  @import "components/natural-search";
+  @import "components/checkbox";
+  @import "components/toggle";
+  @import "components/notifications";
+
+  //Importing helpers
+  @import "helpers/spacing";
+  @import "helpers/boxed";
+  @import "helpers/alignments";
+  @import "helpers/grid";
+  @import "helpers/max-width";
+
+  //Importing responsive
+  @import 'responsive/responsive';
+
+}
+
+@import "embed";

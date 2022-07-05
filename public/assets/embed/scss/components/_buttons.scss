@@ -1,0 +1,128 @@
+@use "sass:math";
+
+.moda-match-btn {
+  position: relative;
+  margin: 0;
+  padding: 13px 22px;
+  display: inline-block;
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  font-size: math.div(18, 16) * 1em;
+  font-weight: 700;
+  line-height: math.div(27, 18) * 1em;
+  letter-spacing: math.div(1.91, 18) * 1em;
+  background-color: map-get($colors, 'brand');
+  color: map-get($colors, 'white');
+  border-radius: 5px;
+  text-transform: uppercase;
+
+  &--sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  &--border-black {
+    border: 1px solid map-get($colors, 'black');
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  &--with-bottom-margin {
+    margin-bottom: 16px;
+  }
+
+  &--size-small {
+    font-size: math.div(14, 16) * 1em;
+    line-height: math.div(17, 14) * 1em;
+    padding: 16px 30px;
+  }
+
+  &--size-extra-small {
+    font-size: math.div(11, 16) * 1em;
+    line-height: math.div(17, 11) * 1em;
+    padding: 14px 20px;
+  }
+
+  &--size-medium {
+    font-size: math.div(12, 16) * 1em;
+    line-height: math.div(18, 12) * 1em;
+    padding: 11px 20px;
+  }
+
+  &--is-loading,
+  &:disabled {
+    cursor: wait;
+    opacity: 0.75;
+  }
+
+  &--is-loading {
+    position: relative;
+    color: transparent;
+  }
+
+  &--disabled {
+    opacity: 0.75;
+    background-color: map-get($colors, 'brand') !important;
+    color: map-get($colors, 'white') !important;
+    cursor: not-allowed;
+  }
+  transition: background-color 0.225s ease-in-out;
+
+  &:focus,
+  &:hover {
+    color: map-get($colors, 'white');
+    background-color: map-get($colors, 'brand');
+    outline: none;
+    text-decoration: none;
+  }
+  @each $name, $color in $colors {
+    &--#{$name} {
+      background-color: $color;
+      color: map-get($colors, 'white') !important;
+      @if ($name == 'white') {
+        color: map-get($colors, 'brand');
+      } @else
+      if ($name == 'black') {
+        background-color: map-get($colors, 'black');
+        opacity: 1;
+      } @else
+      if ($name == 'gray') {
+        color: map-get($colors, 'black') !important;
+      } @else
+      if ($name == 'pink') {
+        box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+        margin-bottom: 10px;
+      }
+
+      &:focus,
+      &:hover {
+        background-color: darken($color, 7%);
+        color: map-get($colors, 'white');
+        @if ($name == 'white') {
+          color: map-get($colors, 'brand');
+        } @else
+        if ($name == 'black') {
+          background-color: #7e7e7e;
+        }
+      }
+    }
+
+    &--color-#{$name} {
+      color: $color !important;
+
+      &:focus,
+      &:hover {
+        color: $color !important;
+      }
+    }
+  }
+}

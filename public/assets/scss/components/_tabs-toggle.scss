@@ -1,0 +1,25 @@
+.tabs-toggle {
+
+  display: block;
+
+  a {
+
+    display: inline-block;
+
+    @extend .btn;
+    @extend .btn--wireframe;
+    @extend .btn--button;
+
+    margin-bottom: 7px;
+    margin-right: 7px;
+
+    &.tabs-toggle--is-active {
+
+      background-color: map-get( $colors, 'button' );
+      color: map-get( $colors, 'white' );
+
+    }
+
+  }
+
+}

@@ -1,0 +1,355 @@
+@use "sass:math";
+
+.help-block {
+
+  font-size: math.div(13, 16) * 1rem;
+  font-weight: 400;
+
+  line-height: math.div(13, 13) * 1em;
+
+  color: map-get( $colors, 'light' );
+
+  margin-top: 7px;
+
+}
+
+.form__group {
+
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  flex-wrap: wrap;
+
+  margin-right: -30px;
+  margin-bottom: 11px;
+
+  .form__label, .input__wrapper {
+
+    margin-right: 31px;
+    margin-bottom: 31px;
+
+    min-width: 106px;
+
+    flex: 0 1;
+
+  }
+
+  .form__label {
+
+    padding-top: 9px;
+
+  }
+
+  .input__wrapper {
+
+    flex-grow: 1;
+
+    .form__control {
+
+      width: 100%;
+
+    }
+
+    &--shrink {
+
+      flex-grow: 0;
+
+      flex-shrink: 0;
+
+      .form__control {
+
+        width: auto;
+
+      }
+
+    }
+
+    .help-block {
+
+      margin-top: 15px;
+
+    }
+
+  }
+
+  &.has-error {
+
+    .help-block {
+
+      color: map-get( $colors, 'error' );
+
+    }
+
+  }
+
+  &--stacked {
+
+    display: block;
+
+    margin-right: 0;
+    margin-bottom: 20px;
+
+    .form__label, .input__wrapper {
+
+      margin-right: 0;
+      margin-bottom: 0;
+
+    }
+
+    .form__label {
+
+      display: block;
+
+      padding-top: 0;
+
+      margin-bottom: 9px;
+
+    }
+
+  }
+
+}
+
+.form__label {
+
+  font-size: math.div(15, 16) * 1rem;
+  font-weight: 400;
+
+  color: map-get( $colors, 'dark' );
+
+  line-height: math.div(25, 15) * 1em;
+
+}
+
+.form__control {
+
+  margin: 0;
+  padding: 12px 16px;
+
+  border: solid 1px map-get( $colors, 'borders' );
+  border-radius: 4px;
+
+  font: inherit;
+  font-size: math.div(13, 16) * 1rem;
+  font-weight: 400;
+
+  line-height: math.div(13, 13) * 1em;;
+
+  color: map-get( $colors, 'text' );
+
+  &::placeholder {
+
+    color: map-get( $colors, 'placeholder' );
+
+    opacity: 1;
+
+  }
+
+  transition: border-color 0.225s ease-in-out;
+
+  &:hover {
+
+    border-color: darken( map-get( $colors, 'borders' ), 7% );
+
+  }
+
+  &:focus {
+
+    border-color: map-get( $colors, 'light' );
+
+  }
+
+  &--type-number {
+
+    width: 160px;
+
+    max-width: 100%;
+
+  }
+
+}
+
+.form__spacer {
+
+  display: block;
+
+  margin-bottom: 71px;
+
+}
+
+.form__footer {
+
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  margin-right: -30px;
+  margin-bottom: -30px;
+
+  margin-top: 43px;
+
+  > * {
+
+    flex: 1 1;
+
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+  }
+
+  &--right {
+
+    text-align: right;
+
+  }
+
+  &--centered {
+
+    text-align: center;
+
+    .form__footer--left, .form__footer--right {
+
+      text-align: center;
+
+      > * {
+
+        margin-right: 20px;
+        margin-bottom: 20px;
+
+      }
+
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+    }
+
+  }
+
+}
+
+
+.form__links {
+
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  margin-right: -30px;
+  margin-bottom: -30px;
+
+  margin-top: 43px;
+
+  > * {
+
+    flex: 1 1;
+
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+  }
+
+  &--right {
+
+    text-align: right;
+
+  }
+
+  a {
+
+    font-size: math.div( 15, 16 ) * 1rem;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    color: map_get( $colors, 'dark' );
+
+    &:hover, &:focus {
+
+      text-decoration: underline;
+
+      color: map_get( $colors, 'dark' );
+
+    }
+
+  }
+
+}
+
+.form__status {
+
+  font-size: math.div(13, 16) * 1rem;
+  font-style: italic;
+
+  line-height: math.div(16, 13) * 1em;
+  letter-spacing: 0;
+
+  color: map-get( $colors, 'placeholder' );
+
+  .loader {
+
+    display: inline-block;
+
+    vertical-align: middle;
+
+    margin-right: 7px;
+
+  }
+
+  .moda-match-loader {
+
+    width: 12px;
+    height: 12px;
+
+  }
+
+}
+
+.image-uploader {
+
+  max-width: 100%;
+
+  width: 200px;
+
+}
+
+.input__group {
+
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: stretch;
+
+  flex-wrap: nowrap;
+
+  .form__control {
+
+    flex-grow: 1;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+  }
+
+  .input__units {
+
+    background-color: map-get( $colors, 'borders' );
+
+    padding: 12px 16px;
+
+    border: solid 1px map-get( $colors, 'borders' );
+    border-radius: 4px;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+  }
+
+}
