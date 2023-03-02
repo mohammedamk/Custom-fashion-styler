@@ -1,0 +1,25 @@
+apps:
+  - name: "moda-match-queue"
+    script: artisan
+    watch: false
+    interpreter: "/usr/bin/php80"
+    interpreter_args: "-d memory_limit=1024M"
+    args: "queue:work database --tries=1 --sleep=2 --timeout=0"
+    restart_delay: 3000
+    error_file: ./storage/logs/queue.error.log
+    out_file: ./storage/logs/queue.out.log
+    pid_file: ./storage/app/queue.pid
+    exec_mode : "fork"
+    instances: "1"
+  - name: "moda-match-photo-optimizer"
+    script: artisan
+    watch: false
+    interpreter: "/usr/bin/php80"
+    interpreter_args: "-d memory_limit=3096M"
+    args: "queue:work database --queue=photo-optimizer --tries=1 --sleep=2 --timeout=0"
+    restart_delay: 3000
+    error_file: ./storage/logs/queue.error.log
+    out_file: ./storage/logs/queue.out.log
+    pid_file: ./storage/app/queue.pid
+    exec_mode : "fork"
+    instances: "2"

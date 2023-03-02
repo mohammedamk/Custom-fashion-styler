@@ -1,0 +1,17 @@
+@use "sass:math";
+
+.heading {
+
+  margin: 0;
+  padding: 0;
+
+  &--type-1 {
+
+    font-size: math.div(38, 16) * 1rem;
+    font-weight: 700;
+
+    color: map-get( $colors, 'dark' );
+
+  }
+
+}

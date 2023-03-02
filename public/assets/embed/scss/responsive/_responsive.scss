@@ -1,0 +1,13 @@
+//Desktop
+@media ( min-width: 800px ) {
+
+  @import "desktop/components/base";
+  @import "desktop/components/items-grid";
+  @import "desktop/components/header";
+  @import "desktop/components/footer";
+  @import "desktop/components/tabs";
+  @import "desktop/components/modal";
+  @import "desktop/components/split-view";
+  @import "desktop/components/vertical-items";
+
+}

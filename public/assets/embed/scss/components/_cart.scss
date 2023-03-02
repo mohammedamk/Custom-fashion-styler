@@ -1,0 +1,422 @@
+@use 'sass:math';
+
+.moda-match-cart {
+
+  &-section {
+
+    + .moda-match-cart-section {
+
+      margin-top: 28px;
+
+      &:before {
+
+        content: '';
+
+        display: block;
+
+        width: 100%;
+        height: 2px;
+
+        background-color: #e8e8e8;
+
+        margin-bottom: 28px;
+
+      }
+
+    }
+
+    &-header {
+
+      font-size: math.div( 18, 16 ) * 1em;
+      font-weight: 700;
+      font-style: normal;
+
+      line-height: math.div( 27, 18 ) * 1em;
+      letter-spacing: math.div( 0.23, 18 ) * 1em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+
+    }
+
+  }
+
+  &-panel {
+
+    padding: 13px 23px;
+
+    border-radius: 9px;
+
+    background-color: #e8e8e8;
+
+    &-header {
+
+      margin-bottom: 10px;
+
+    }
+
+    &-title {
+
+      margin: 0;
+      padding: 0;
+
+      font-size: math.div( 15, 16 ) * 1em;
+      font-weight: 700;
+      font-style: italic;
+
+      line-height: math.div( 23, 15 ) * 1em;
+      letter-spacing: math.div( 1.59, 15 ) * 1em;
+
+      text-transform: uppercase;
+
+    }
+
+    &-footer {
+
+      padding-top: 13px;
+
+      border-top: solid 2px #ffffff;
+
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      flex-wrap: nowrap;
+
+      &-left {
+
+        margin-right: 26px;
+
+        font-size: math.div( 13, 16 ) * 1em;
+        font-weight: 500;
+
+        line-height: math.div( 20, 13 ) * 1em;
+        letter-spacing: math.div( 1.38, 13 ) * 1em;
+
+      }
+
+      &-right {
+
+        flex-grow: 1;
+
+        text-align: right;
+
+        .moda-match-btn {
+
+          font-size: math.div( 12, 16 ) * 1em;
+          font-weight: 700;
+
+          line-height: math.div( 18, 12 ) * 1em;
+          letter-spacing: math.div( 1.44, 12 ) * 1em;
+
+          padding: 10px 14px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  &-item {
+
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+
+      @media (max-width: 575px) {
+        margin-block-end: 8px;
+      }
+    }
+
+    position: relative;
+
+    + .moda-match-cart-item {
+
+      margin-top: 24px;
+
+    }
+
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    flex-wrap: nowrap;
+
+    @media (max-width: 575px) {
+      flex-wrap: wrap;
+    }
+
+    &-image {
+
+      margin-right: 32px;
+
+      background-color: #ffffff;
+
+      box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.14);
+
+      border-radius: 10px;
+
+      padding: 7px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      min-width: 83px;
+      height: 83px;
+
+      @media (max-width: 575px) {
+        order: 2;
+        margin-right: 0;
+      }
+
+      img {
+
+        position: absolute;
+
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-position: center center;
+        object-fit: cover;
+
+      }
+
+    }
+
+    &-inner {
+      width: 50%;
+      // flex-grow: 1;
+      @media (max-width: 990px) {
+        width: 40%;
+      }
+
+      @media (max-width: 575px) {
+        order: 1;
+        width: calc(100% - 20px);
+      }
+
+    }
+
+    &-header {
+
+      margin-bottom: 12px;
+
+      @media (max-width: 575px) {
+        margin-bottom: 0;
+      }
+
+    }
+
+    &-title {
+
+      font-size: math.div( 14, 16 ) * 1em;
+      font-weight: 700;
+
+      line-height: math.div( 21, 14 ) * 1em;
+      letter-spacing: math.div( 0.18, 14 ) * 1em;
+
+    }
+
+    &-options {
+
+      font-size: math.div( 14, 16 ) * 1em;
+      font-weight: 600;
+
+      line-height: math.div( 21, 14 ) * 1em;
+      letter-spacing: math.div( 0.18, 14 ) * 1em;
+
+      color: #e8e8e8;
+
+    }
+
+    &-quantity {
+      border: 1px solid #000;
+      margin-inline: 24px;
+
+      @media (max-width: 990px) {
+        margin-inline: auto;
+      }
+
+      @media (max-width: 575px) {
+        order: 3;
+      }
+
+      * {
+        border: none;
+        background: none;
+        width: 25px;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        aspect-ratio: 1 / 1;
+        text-align: center;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      input {
+        appearance: textfield;
+      }
+
+    }
+
+    &-price {
+
+      font-size: math.div( 13, 16 ) * 1em;
+      font-weight: 600;
+
+      color: map_get( $colors, 'black' );
+
+      letter-spacing: math.div( 0.65, 13 ) * 1em;
+      line-height: math.div( 20, 13 ) * 1em;
+    }
+
+    &-total-price {
+      @media (max-width: 990px) {
+        margin-inline: auto;
+      }
+      @media (max-width: 575px) {
+        order: 4;
+      }
+    }
+
+    &-remove {
+
+      display: block;
+
+      padding: 0;
+
+      width: 20px;
+      height: 20px;
+
+      text-align: center;
+      line-height: 20px;
+
+      position: absolute;
+
+      right: 0;
+      top: 50%;
+
+      transform: translateY( -50% );
+
+      font-size: math.div( 13, 16 ) * 1em;
+
+      text-decoration: none;
+
+      color: #9d9d9d;
+
+      transition: color 0.225s ease-out;
+
+      @media (max-width: 990px) {
+        top: 10px;
+      }
+
+      &:hover, &:focus {
+
+        color: map_get( $colors, 'secondary' );
+
+        outline: none;
+
+        text-decoration: none;
+
+      }
+
+
+    }
+
+  }
+
+  &-summary {
+
+    table-layout: fixed;
+
+    width: 100%;
+
+    text-align: left;
+
+    margin-bottom: 20px;
+
+    thead {
+
+      tr {
+
+        td, th {
+
+          width: 50%;
+
+          color: #a4a4a4;
+
+        }
+
+      }
+
+    }
+
+    tr {
+
+      td, th {
+
+        padding: 7px 0;
+
+      }
+
+      th {
+
+        font-size: math.div( 15, 16 ) * 1em;
+        font-weight: 500;
+        font-style: italic;
+
+        padding-right: 7px;
+
+      }
+
+      td {
+
+        text-align: right;
+
+        font-weight: 700;
+
+        padding-left: 7px;
+
+      }
+
+    }
+
+    tfoot {
+
+      tr {
+
+        td, th {
+
+          color: #000000;
+
+          strong {
+
+            font-size: math.div( 18, 16 ) * 1em;
+            font-weight: 700;
+
+            line-height: math.div( 27, 18 ) * 1em;
+            letter-spacing: math.div( 1.91, 18 ) * 1em;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

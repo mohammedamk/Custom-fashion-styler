@@ -1,0 +1,473 @@
+@use "sass:math";
+
+.btn {
+
+  position: relative;
+
+  margin: 0;
+  padding: 10px 48px;
+
+  display: inline-block;
+
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+
+  font-size: math.div(12, 16) * 1rem;
+  font-weight: 400;
+
+  line-height: math.div(17, 12) * 1em;
+
+  background-color: map-get($colors, 'button');
+  color: map-get($colors, 'white');
+
+  border-radius: 4px;
+
+  svg {
+
+    display: inline-block;
+
+    vertical-align: text-top;
+
+    .icon--fill {
+
+      fill: map-get( $colors, 'white' );
+
+      transition: fill 0.225s ease-in-out;
+
+    }
+
+    .icon--stroke {
+
+      stroke: map-get( $colors, 'white' );
+
+      transition: stroke 0.225s ease-in-out;
+
+    }
+
+  }
+
+  &--block {
+
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+  }
+
+  &--large {
+
+    font-size: math.div(24, 16) * 1rem;
+
+    padding: 12px 35px;
+
+  }
+
+  &--wireframe {
+
+    background-color: transparent;
+
+    color: map-get($colors, 'button');
+
+    border: solid 1px map_get($colors, 'button');
+
+    transition: background-color 0.225s ease-in-out;
+
+    svg {
+
+      .icon--fill {
+
+        fill: map-get( $colors, 'button' );
+
+      }
+
+      .icon--stroke {
+
+        stroke: map-get( $colors, 'button' ) ;
+
+      }
+
+    }
+
+  }
+
+  &--is-loading, &:disabled {
+
+    cursor: wait;
+
+    opacity: 0.75;
+
+  }
+
+  .btn__loader {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate( -50%, -50% );
+
+    width: 80px;
+    height: 80px;
+
+    .lds-ellipsis div {
+
+      background-color: map-get( $colors, 'link' );
+
+    }
+
+  }
+
+  &--is-loading {
+
+    position: relative;
+
+    color: transparent;
+
+    .btn__icon {
+
+      opacity: 0;
+
+    }
+
+    .btn__badge {
+
+      opacity: 0;
+
+    }
+
+    &.btn--icon {
+
+      svg, img {
+
+        opacity: 0;
+
+      }
+
+    }
+
+  }
+
+  &--disabled {
+
+    opacity: 0.60;
+
+    background-color: map-get( $colors, 'button' ) !important;
+    color: map-get( $colors, 'white' ) !important;
+
+    cursor: not-allowed;
+
+    &.btn--icon {
+
+      background-color: transparent !important;
+      color: map_get( $colors, 'button' ) !important;
+
+      @each $name, $color in $colors {
+
+        &.btn--#{$name} {
+
+          color: $color !important;
+          background-color: transparent !important;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  transition: background-color 0.225s ease-in-out;
+
+  &:hover, &:focus {
+
+    color: map-get($colors, 'white');
+    background-color: darken( map-get($colors, 'button'), 7% );
+
+    outline: none;
+    text-decoration: none;
+
+    &.btn--wireframe {
+
+      color: map-get($colors, 'button');
+      background-color: transparentize(map-get($colors, 'button'), 0.92);
+      border-color: map-get($colors, 'button');
+
+      svg {
+
+        .icon--fill {
+
+          fill: map-get( $colors, 'button' );
+
+        }
+
+        .icon--stroke {
+
+          stroke: map-get( $colors, 'button' ) ;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  &--icon {
+
+    padding: 8px 12px;
+
+    background-color: transparent;
+
+    border: solid 1px map_get( $colors, 'button' );
+
+    color: map-get( $colors, 'button' );
+
+    svg, img {
+
+      height: 16px;
+      width: auto !important;
+
+      max-width: 100%;
+
+    }
+
+    .icon--fill, .icon-self--fill {
+
+      fill: map-get( $colors, 'button' );
+
+    }
+
+    .icon--stroke, .icon-self--stroke {
+
+      stroke: map-get( $colors, 'button' );
+
+    }
+
+    &:hover, &:focus {
+
+      background-color: transparentize( map-get( $colors, 'button' ), 0.90 );
+
+      color: map-get( $colors, 'button' );
+
+      border-color: map-get( $colors, 'button' );
+
+    }
+
+  }
+
+  @each $name, $color in $colors {
+
+    &--#{$name} {
+
+      background-color: $color;
+      color: map-get($colors, 'white');
+
+      svg {
+
+        .icon--fill {
+
+          fill: map-get($colors, 'white');
+
+        }
+
+        .icon--stroke {
+
+          stroke: map-get($colors, 'white');
+
+        }
+
+      }
+
+      .btn__loader {
+
+        .lds-ellipsis div {
+
+          background: map_get( $colors, 'white' );
+
+        }
+
+      }
+
+      @if ($name == 'white') {
+
+        color: map-get($colors, 'button');
+
+        svg {
+
+          .icon--fill {
+
+            fill: map-get($colors, 'button');
+
+          }
+
+          .icon--stroke {
+
+            stroke: map-get($colors, 'button');
+
+          }
+
+        }
+
+        .btn__loader {
+
+          .lds-ellipsis div {
+
+            background: map_get( $colors, 'button' );
+
+          }
+
+        }
+
+      }
+
+      &:hover, &:focus {
+
+        background-color: darken($color, 7%);
+        color: map-get($colors, 'white');
+
+        svg {
+
+          .icon--fill {
+
+            fill: map-get($colors, 'white');
+
+          }
+
+          .icon--stroke {
+
+            stroke: map-get($colors, 'white');
+
+          }
+
+        }
+
+        @if ($name == 'white') {
+
+          color: map-get($colors, 'button');
+
+          svg {
+
+            .icon--fill {
+
+              fill: map-get($colors, 'button');
+
+            }
+
+            .icon--stroke {
+
+              stroke: map-get($colors, 'button');
+
+            }
+
+          }
+
+        }
+
+      }
+
+      &.btn--wireframe {
+
+        border-color: $color;
+        color: $color;
+
+        background-color: transparent;
+
+        &:hover, &:focus {
+
+          background-color: transparentize($color, 0.92);
+          color: $color;
+          border-color: $color;
+
+        }
+
+        .btn__loader {
+
+          .lds-ellipsis div {
+
+            background: $color;
+
+          }
+
+        }
+
+      }
+
+      &.btn--icon {
+
+        border-color: $color;
+        color: $color;
+
+        background-color: transparent;
+
+        .icon--fill {
+
+          fill: $color;
+
+        }
+
+        .icon--stroke {
+
+          stroke: $color;
+
+        }
+
+        .btn__loader {
+
+          .lds-ellipsis div {
+
+            background: $color;
+
+          }
+
+        }
+
+        &:hover, &:focus {
+
+          background-color: transparentize($color, 0.92);
+          color: $color;
+          border-color: $color;
+
+          .icon--fill {
+
+            fill: $color;
+
+          }
+
+          .icon--stroke {
+
+            stroke: $color;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  @each $name, $color in $colors {
+
+    &--white-#{$name} {
+
+      color: $color;
+
+      &:hover, &:focus {
+
+        color: $color;
+
+      }
+
+    }
+
+  }
+
+}

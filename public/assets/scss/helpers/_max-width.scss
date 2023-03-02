@@ -1,0 +1,13 @@
+.max-width {
+
+  @for $i from 10 through 140 {
+
+    $max_width: $i * 10;
+
+    &--#{$max_width} {
+      max-width: $max_width * 1px;
+    }
+
+  }
+
+}

@@ -1,0 +1,42 @@
+#dashboard {
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: map-get( $colors, 'page-background' );
+
+  overflow: hidden;
+
+  .dashboard__wrapper {
+
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: stretch;
+
+    flex-wrap: nowrap;
+
+    height: 100%;
+
+  }
+
+  .dashboard__sidebar, .dashboard__page {
+
+    min-width: 260px;
+
+    flex: 0 1;
+
+  }
+
+  .dashboard__page {
+
+    flex-grow: 1;
+
+  }
+
+}

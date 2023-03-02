@@ -1,0 +1,85 @@
+@use "sass:math";
+
+.alert {
+
+  display: block;
+
+  margin-bottom: 43px;
+
+  padding: 16px 20px;
+
+  background-color: map-get( $colors, 'brand' );
+  color: #ffffff;
+
+  font-size: math.div(13, 16) * 1rem;
+  font-weight: 400;
+  font-style: normal;
+
+  text-align: left;
+
+  strong {
+
+    font-weight: 700;
+
+  }
+
+  &.alert-dismissible {
+
+    position: relative;
+
+    padding-right: 45px;
+
+  }
+
+  .close {
+
+    display: block;
+
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    transform: translateY( -50% );
+
+    appearance: none;
+    background: none;
+    padding: 10px;
+    margin: 0 1em 0 0;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    text-decoration: none;
+
+    font-size: math.div(16, 12) * 1em;
+
+    &:hover, &:focus {
+
+      border: none;
+      background: none;
+      box-shadow: none;
+      text-shadow: none;
+
+      color: map_get( $colors, 'white' );
+
+    }
+
+  }
+
+  @each $name, $color in $colors {
+
+    &--#{$name} {
+
+      border-color: $color;
+
+    }
+
+  }
+
+  + .dashboard__widgets {
+
+    margin-top: -13px;
+
+  }
+
+}

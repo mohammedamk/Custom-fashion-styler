@@ -1,0 +1,78 @@
+@use "sass:math";
+
+.vue-notification-group {
+
+  padding-top: 10px;
+  padding-right: 10px;
+
+}
+
+.vue-notification {
+
+  font: inherit;
+
+  padding: 16px !important;
+
+  border: solid 2px map-get($colors, 'brand') !important;
+  background-color: #ffffff !important;
+
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+
+  border-radius: 6px;
+
+  .notification-title {
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: math.div(16, 16) * 1rem;
+    font-weight: 600;
+
+    color: map-get( $colors, 'brand' );
+
+  }
+
+  .notification-content {
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: math.div(14, 16) * 1rem;
+
+    color: map-get( $colors, 'dark' );;
+
+  }
+
+  &.success {
+
+    border-color: map-get( $colors, 'green' ) !important;
+
+    .notification-title {
+
+      color: map-get( $colors, 'green' );
+
+    }
+
+  }
+
+  &.info {
+
+    border-color: map-get( $colors, 'blue' ) !important;
+
+    .notification-title {
+
+      color: map-get( $colors, 'blue' );
+
+    }
+
+  }
+
+  &.error {
+
+    border-color: map-get( $colors, 'error' ) !important;
+
+    .notification-title {
+
+      color: map-get( $colors, 'error' );
+
+    }
+
+  }
+
+}

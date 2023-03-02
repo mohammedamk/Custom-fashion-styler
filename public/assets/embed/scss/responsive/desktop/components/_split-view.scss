@@ -1,0 +1,19 @@
+.moda-match-split-view {
+
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100%;
+
+  &-left, &-right {
+
+    min-width: 112px;
+
+  }
+
+  &-left {
+
+    margin-right: 30px;
+
+  }
+
+}

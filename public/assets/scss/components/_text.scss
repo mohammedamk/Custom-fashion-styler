@@ -1,0 +1,36 @@
+@use "sass:math";
+
+.text {
+
+  margin: 0;
+  padding: 0;
+
+  &--type-1 {
+
+    font-size: math.div(24, 16) * 1rem;
+    font-weight: 400;
+
+    line-height: math.div(32, 24) * 1em;
+
+    strong {
+
+      font-weight: 700;
+
+      text-decoration: underline;
+
+    }
+
+  }
+
+  &--type-2 {
+
+    font-size: math.div(18, 16) * 1rem;
+    font-weight: 400;
+
+    line-height: math.div(21, 18) * 1em;
+
+    opacity: 0.5;
+
+  }
+
+}

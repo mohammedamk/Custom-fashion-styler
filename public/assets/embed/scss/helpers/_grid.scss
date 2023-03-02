@@ -1,0 +1,72 @@
+.moda-match-grid {
+
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: stretch;
+
+  flex-wrap: wrap;
+
+  margin-right: -10.5px;
+  margin-bottom: -10.5px;
+
+  &__item {
+
+    flex: 0 1;
+
+    margin-right: 10.5px;
+    margin-bottom: 10.5px;
+
+  }
+
+  @for $i from 2 through 5 {
+
+    $margins: $i * 10.5px;
+
+    &--#{$i} {
+
+      .moda-match-grid__item {
+
+        min-width: calc( ( 100% - #{$margins} ) / #{$i} );
+
+      }
+
+    }
+
+  }
+
+  @for $s from 1 through 20 {
+
+    &--spacing-#{$s * 5} {
+
+      margin-right: $s * -5px;
+      margin-bottom: $s * -5px;
+
+      .moda-match-grid__item {
+
+        margin-right: $s * 5px;
+        margin-bottom: $s * 5px;
+
+      }
+
+      @for $i from 2 through 5 {
+
+        $margins: $i * ( $s * 5px );
+
+        &.moda-match-grid--#{$i} {
+
+          .moda-match-grid__item {
+
+            min-width: calc( ( 100% - #{$margins} ) / #{$i} );
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,13 @@
+#dashboard {
+
+  .dashboard__page {
+
+    background-color: map-get( $colors, 'page-background' );
+
+    margin-top: 70px;
+
+    padding: 30px 50px 100px 75px;
+
+  }
+
+}

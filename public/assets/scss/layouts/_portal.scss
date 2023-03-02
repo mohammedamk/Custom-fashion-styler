@@ -1,0 +1,124 @@
+@use 'sass:math';
+
+#portal {
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  overflow: hidden;
+
+  .portal__wrapper {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: stretch;
+
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .portal__image, .portal__content {
+
+    min-width: 400px;
+
+    flex: 1 1;
+
+    height: 100%;
+
+  }
+
+  .portal__content {
+
+    background-color: #ececec;
+
+    padding: 64px 30px;
+
+    color: map-get( $colors, 'dark' );
+
+
+  }
+
+  .portal__inner {
+
+    max-width: 100%;
+    width: 356px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+  }
+
+  .portal__image {
+
+    overflow: hidden;
+
+    position: relative;
+
+    img {
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center center;
+
+    }
+
+  }
+
+  .portal__header {
+
+    margin-bottom: 80px;
+
+  }
+
+  .portal__logo {
+
+    display: block;
+
+    text-align: center;
+
+    img {
+
+      max-width: 100%;
+      height: auto !important;
+
+    }
+
+  }
+
+  .portal__tagline {
+
+    margin: 0;
+    padding: 0;
+
+    display: block;
+
+    text-align: center;
+
+    font-size: 35 / 16 * 1rem;
+    font-weight: 700;
+    font-style: normal;
+
+    line-height: 53 / 35 * 1em;
+    letter-spacing: math.div( 7, 35 ) * 1em;
+
+    margin-top: 9px;
+
+  }
+
+}

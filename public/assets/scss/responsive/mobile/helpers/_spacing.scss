@@ -1,0 +1,50 @@
+$sides: (
+  't': 'top',
+  'l': 'left',
+  'r': 'right',
+  'b': 'bottom'
+);
+
+$types: ('padding', 'margin');
+
+@each $type in $types {
+
+  @for $i from 0 through 500 {
+
+    .#{$type}--#{$i} {
+
+      #{$type}: $i * 0.75px;
+
+    }
+
+    .#{$type}--v-#{$i} {
+
+      #{$type}-top: $i * 0.75px;
+      #{$type}-bottom: $i * 0.75px;
+
+    }
+
+    .#{$type}--h-#{$i} {
+
+      #{$type}-left: $i * 0.75px;
+      #{$type}-right: $i * 0.75px;
+
+    }
+
+  }
+
+  @each $class, $side in $sides {
+
+    @for $i from 0 through 500 {
+
+      .#{$type}--#{$class}-#{$i} {
+
+        #{$type}-#{$side}: $i * 0.75px;
+
+      }
+
+    }
+
+  }
+
+}

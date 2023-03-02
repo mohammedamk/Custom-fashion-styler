@@ -1,0 +1,46 @@
+@use "sass:math";
+
+#dashboard {
+
+  .dashboard__sidebar {
+
+    background-color: map-get( $colors, 'dark' );
+
+    .sidebar__logo {
+
+      display: block;
+
+      background-color: rgba(0, 0, 0, 0.1);
+
+      padding: 24px 20px;
+
+      text-align: left;
+
+      font-size: math.div(15, 16) * 1rem;
+      font-weight: 700;
+
+      line-height: math.div(21, 15) * 1em;
+      letter-spacing: math.div(3, 15) * 1em;
+
+      color: map-get( $colors, 'white' );
+
+      text-transform: uppercase;
+      text-decoration: none;
+
+      transition: color 0.225s ease-in-out;
+
+      &:hover, &:focus {
+
+        color: darken( map-get( $colors, 'white' ), 7% );
+
+        text-decoration: none;
+
+        outline: none;
+
+      }
+
+    }
+
+  }
+
+}

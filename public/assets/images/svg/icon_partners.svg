@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.999 15.999">
+    <defs>
+        <clipPath id="a">
+            <path style="fill:none" d="M0 0h15.999v15.999H0z"/>
+        </clipPath>
+    </defs>
+    <g style="clip-path:url(#a)">
+        <path d="M11-203v-16h2v16zm-14 0v-16h2v16zm11-5v-11h2v11zm-5 0v-11h4v11zm-3 0v-11h2v11z" transform="translate(3 219)" class="icon--fill"/>
+    </g>
+</svg>

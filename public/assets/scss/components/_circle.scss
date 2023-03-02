@@ -1,0 +1,52 @@
+.circle {
+
+  display: inline-block;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 100%;
+
+  background-color: map-get( $colors, 'borders' );
+
+  transition: background-color 0.225s ease-in-out, opacity 0.225s ease-in-out;
+
+  @each $name, $color in $colors {
+
+    &--#{$name} {
+
+      background-color: $color;
+
+    }
+
+  }
+
+  &--is-blinking {
+
+    animation: blink 1.224s infinite ease-in-out;
+
+  }
+
+}
+
+@keyframes blink {
+
+  0% {
+
+    opacity: 0.3;
+
+  }
+
+  50% {
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    opacity: 0.3;
+
+  }
+
+}
